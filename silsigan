@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+
+import re
+from urllib.request import urlopen
+from bs4 import BeautifulSoup as bs
+
+url = 'https://www.naver.com'
+html = urlopen(url).read()
+
+bsObj = bs(html, 'html.parser')
+num_list = bsObj.find_all("span", class_="ah_r")
+key_list = bsObj.find_all("span", class_="ah_k")
+
+p = re.compile('>(.*)</span>')
+
+for i in range(20):
+	num = p.search(str(num_list[i])).group(1)
+	key = p.search(str(key_list[i])).group(1)
+	print(num,":",key)
+
+

@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+
+import sys
+string = sys.argv
+
+print('string[0]='+string[0])
+print('string[1]='+string[1])
+print('string[2]='+string[2])
+
+f1=open(string[1],'r')
+b=f1.read()
+f1.close()
+
+f2=open(string[1],'w')
+f2.write(b+string[2])
+f2.close()

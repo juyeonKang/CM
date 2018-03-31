@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+
+import sys
+fname = sys.argv
+
+print('fname[0]='+fname[0])
+print('fname[1]='+fname[1])
+print('fname[2]='+fname[2])
+
+f1=open(fname[1],'r')
+b=f1.read()
+
+f2=open(fname[2],'w')
+f2.write(b)
+
+f1.close()
+f2.close()
